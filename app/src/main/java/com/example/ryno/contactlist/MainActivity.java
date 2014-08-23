@@ -51,30 +51,30 @@ public class MainActivity extends Activity {
     public void displayListView() {
 
 
-        Cursor cursor = dbHelper.fetchAllCountries();
+        Cursor cursor = dbHelper.fetchAllContacts();
 
         // The desired columns to be bound
         String[] columns = new String[] {
                 ContactsDbAdapter.KEY_SURNAME,
-                ContactsDbAdapter.KEY_NAME,
+                //ContactsDbAdapter.KEY_NAME,
                 ContactsDbAdapter.KEY_CELLNUM,
-                ContactsDbAdapter.KEY_EMAILADDR,
-                ContactsDbAdapter.KEY_HOMEADDR
+                //ContactsDbAdapter.KEY_EMAILADDR,
+                //ContactsDbAdapter.KEY_HOMEADDR
         };
 
         // the XML defined views which the data will be bound to
         int[] to = new int[] {
                 R.id.surname_text,
-                R.id.name,
+                //R.id.name,
                 R.id.cell_text,
-                R.id.email_text,
-                R.id.home_text,
+                //R.id.email_text,
+                //R.id.home_text,
         };
 
         // create the adapter using the cursor pointing to the desired data
         //as well as the layout information
         dataAdapter = new SimpleCursorAdapter(
-                this, R.layout.country_info,
+                this, R.layout.contacts_info,
                 cursor,
                 columns,
                 to,

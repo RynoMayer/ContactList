@@ -125,7 +125,7 @@ public class ContactsDbAdapter {
 
     }
 
-    public Cursor fetchAllCountries() {
+    public Cursor fetchAllContacts() {
 
         Cursor mCursor = mDb.query(SQLITE_TABLE, new String[] {KEY_ROWID,
                         KEY_SURNAME, KEY_NAME, KEY_CELLNUM,KEY_EMAILADDR, KEY_HOMEADDR},
@@ -163,7 +163,11 @@ public class ContactsDbAdapter {
             cursor = mDb.query
                     (
                             SQLITE_TABLE,
-                            new String[] { KEY_SURNAME, KEY_NAME, KEY_CELLNUM,KEY_EMAILADDR, KEY_HOMEADDR  },
+                            new String[] { KEY_SURNAME,
+                                    //KEY_NAME,
+                                    KEY_CELLNUM
+                                    //,KEY_EMAILADDR, KEY_HOMEADDR
+                                    },
                             KEY_CELLNUM + " = '" +rowID+"'",
                             null, null, null, null, null
                     );
